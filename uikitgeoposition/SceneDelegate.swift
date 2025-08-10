@@ -18,9 +18,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        let viewController = MapViewController()
-        let navigationController = UINavigationController(rootViewController: viewController)
-        window?.rootViewController = navigationController
+        let beaconViewController = BeaconDetectorViewController()
+        beaconViewController.tabBarItem.title = "Beacons"
+        beaconViewController.tabBarItem.image = UIImage(systemName: "location.circle")
+        let baconNavigationController = UINavigationController(rootViewController: beaconViewController)
+        let mapViewController = MapViewController()
+        mapViewController.tabBarItem.title = "Map"
+        mapViewController.tabBarItem.image = UIImage(systemName: "map")
+        let mapNavigationController = UINavigationController(rootViewController: mapViewController)
+        let tabBarController = UITabBarController()
+        tabBarController.setViewControllers([beaconViewController, mapViewController], animated: false)
+        window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
     }
 

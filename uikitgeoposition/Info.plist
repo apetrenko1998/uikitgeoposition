@@ -2,10 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Some important reason</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Detect iBeacon devices in the background</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Just need it, gig</string>
+	<string>Detect iBeacon devices</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
